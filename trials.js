@@ -195,11 +195,12 @@ function hasBalancedParens(string) {
 // The function should handle all types of characters:
 //   > compress('Hello, world! Cows go moooo...');
 //   'Hel2o, world! Cows go mo4.3'
+// aab
 function compress(string) {
-  const compressed = [];
+  const compressed = ['', ];
 
   let currChar = '';
-  let charCount = 0;
+  let charCount = 0;2
   for (const char of string) {
     if (char !== currChar) {
       compressed.push(currChar);
