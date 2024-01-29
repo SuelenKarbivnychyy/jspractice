@@ -4,8 +4,8 @@
 def output_all_items(items):    
     """ 
     Print each item in the given array.
-    Ex.:
 
+    Ex.:
     >>> output_all_items([52, 40, 78, "hi"])
     52
     40
@@ -21,8 +21,8 @@ def output_all_items(items):
 def get_all_evens(nums):
     """
     Given an array of numbers, return an array of all even numbers.
-    Ex.:
 
+    Ex.:
     >>> get_all_evens([20, 7, 10, 1, 2, 8, 46])
     [20, 10, 2, 8, 46]
     
@@ -39,8 +39,8 @@ def get_all_evens(nums):
 def get_odd_indices(items):
     """
     Given an array, return all elements at odd numbered indices.
-    Ex.:
 
+    Ex.:
     >>> get_odd_indices([1, 'hello', True, 500])
     ['hello', 500]
    
@@ -57,8 +57,8 @@ def get_odd_indices(items):
 def print_as_numbered_list(items):
     """
     Given an array, output a numbered list.
-    Ex.:
 
+    Ex.:
     >>> print_as_numbered_list([1, 'hello', "true"])
     1. 1
     1. hello
@@ -76,8 +76,10 @@ def print_as_numbered_list(items):
 def get_range(start, stop):
     """
     Return an array of numbers in a certain range.
-    Ex.:
 
+    Ex.:
+    >>> get_range(1, 5)
+    [1, 2, 3, 4]
     
     """
 
@@ -95,8 +97,8 @@ def get_range(start, stop):
 def censor_vowels(word):
     """
     Given a string, return a string where vowels are replaced with '*'.
-    Ex:
-    
+
+    Ex:    
     """
 
     chars = []
@@ -114,8 +116,8 @@ def censor_vowels(word):
 def snake_to_camel(string):
     """
     Given a string in snake case, return a string in upper camel case.
-    Ex.:
 
+    Ex.:
     >>> snake_to_camel('hello_world')
     'HelloWorld'
     
@@ -136,8 +138,8 @@ def snake_to_camel(string):
 def longest_word_length(words):
     """    
     Return the length of the longest word in the given array of words.
-    Ex.:
 
+    Ex.:
     >>> longest_word_length(['jellyfish', 'zebra'])
     9
 
@@ -155,8 +157,8 @@ def longest_word_length(words):
 def truncate(string):
     """
     Truncate repeating characters into one character.
-    Ex.:
-    
+
+    Ex.:    
     >>> truncate('hi***!!!! wooow')
     'hi*! wow'
     
@@ -175,8 +177,8 @@ def truncate(string):
 def has_balanced_parens(string):
     """
     Return true if all parentheses in a given string are balanced.
-    Ex.:
 
+    Ex.:
     >>> has_balanced_parens('((This) (is) (good))')
     True
     >>> has_balanced_parens('(Oh no!)(')
@@ -201,30 +203,32 @@ def has_balanced_parens(string):
 
 def compress(string):
     """Return a compressed version of the given string.
-    Ex.:
 
-    
+    Ex.:
+    >>> compress('Hello, world! Cows go moooo...')
+    'Hel2o, world! Cows go mo4.3'
+
     """
 
-    # compressed = []
+    compressed = []
 
-    # current_char = ""
-    # counter = 0
+    current_char = ""
+    counter = 0
 
-    # for char in string:
-    #     if char != current_char:
-    #         compressed.append(current_char)
+    for char in string:
+        if char != current_char:
+            compressed.append(current_char)
 
-    #         if counter > 1:
-    #             compressed.append(str(counter))
+            if counter > 1:
+                compressed.append(str(counter))
 
-    #         current_char = char
-    #         counter = 0
+            current_char = char
+            counter = 0
 
-    #     counter += 1
-    # print(compressed)
+        counter += 1
 
-    # return "".join(compressed)    
+    compressed.append(current_char)
+    if counter > 1:
+        compressed.append(str(counter))
 
-
-
+    return "".join(compressed)
